@@ -4,13 +4,31 @@
   <meta charset="UTF-8">
   <link  rel="stylesheet" href="style.css"/>
   <link rel="shortcut icon" href="favicon.ico" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <title></title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script--> <title></title>
 </head>
 <body>
   <div class="card" id="c1"><div class="title">Merry Xmas <br /> and Happy New Year</div></div>
-  <div class="card" id="c2"><div class="title">
-    <iframe width="320" src="https://www.youtube.com/embed/MDwPXRy9IFc?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div></div>
+  <div class="card" id="c2"><div class="title"><iframe width="320" src="https://www.youtube.com/embed/MDwPXRy9IFc?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+
+<img id="stamp" draggable="true" src="rubberstamp.png" width=50px />
 </body>
+
+<script>
+
+$(document).ready(function(){
+
+  // jQuery methods go here...
+  $("#stamp").draggable();
+  $("#c1").click(function(){
+        $("#c1").addClass("hovered");
+    });
+});
+
+// Make the DIV element draggable:
+</script>
 </html>
+
+
+<!--http://web.mit.edu/lavin/www/origami/books/details/1568811942/ -->

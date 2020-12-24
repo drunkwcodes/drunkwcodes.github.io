@@ -31,7 +31,7 @@
     transform-origin: 0 100%;
 }
 
-#c1:active{
+.hovered, #c1:active {
     background: #aa0000;
     transition: all 1s ease-out;
     /* transform: rotateY(-130deg); */
