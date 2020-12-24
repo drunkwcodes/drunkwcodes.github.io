@@ -10,19 +10,43 @@
 </head>
 <body>
   <div class="card" id="c1"><div class="title">Merry Xmas <br /> and Happy New Year</div></div>
-  <div class="card" id="c2"><div class="title"><iframe width="320" src="https://www.youtube.com/embed/MDwPXRy9IFc?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+  <div class="card droppable" id="c2"><div class="title"><iframe width="320" src="https://www.youtube.com/embed/MDwPXRy9IFc?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
 
-<img id="stamp" draggable="true" src="rubberstamp.png" width=50px />
+<img id="stamp" src="rubberstamp.png" />
 </body>
 
 <script>
 
 $(document).ready(function(){
 
-  // jQuery methods go here...
+
+  var currentMousePos = { x: -1, y: -1 };
+  $(document).mouseup(function(event) {
+      currentMousePos.x = event.pageX - 550;
+      currentMousePos.y = event.pageY - 150;
+  });
+
   $("#stamp").draggable();
   $("#c1").click(function(){
         $("#c1").addClass("hovered");
+    });
+
+  var stamped = false;
+
+  $( ".droppable" ).droppable({
+      drop: function( event, ui ) {
+
+          console.log(currentMousePos);
+
+          var newstamp = $( "<img id='icon' src='trustedbrand.png' style='position: absolute; z-index: 3; top: "+ currentMousePos.y + "px; left: " + currentMousePos.x + "px; width: 100px'/>" )
+          $(this).append(newstamp);
+
+          if(stamped == false){
+              $("#stamp").wrap($('<a target="_blank" rel="noopener noreferrer" href= "http://web.mit.edu/lavin/www/origami/books/details/1568811942/" style="cursor: default">'));
+              stamped = true;
+          }
+
+        }
     });
 });
 
@@ -31,4 +55,4 @@ $(document).ready(function(){
 </html>
 
 
-<!--http://web.mit.edu/lavin/www/origami/books/details/1568811942/ -->
+<!--Thanks to http://web.mit.edu/lavin/www/origami/books/details/1568811942/ -->

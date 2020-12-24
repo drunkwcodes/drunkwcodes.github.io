@@ -46,3 +46,9 @@
 
     box-shadow: -1px 2px 20px;
 }
+
+#stamp {
+    width: 100px;
+    top: 100px;
+    z-index: 4;
+}
