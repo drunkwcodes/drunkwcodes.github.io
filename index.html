@@ -4,55 +4,14 @@
   <meta charset="UTF-8">
   <link  rel="stylesheet" href="style.css"/>
   <link rel="shortcut icon" href="favicon.ico" />
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script--> <title></title>
+    <!-- script src="https://code.jquery.com/jquery-1.12.4.js"></script -->
+    <!--script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script-->
+    <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script-->
+  <title></title>
 </head>
 <body>
-  <div class="card" id="c1"><div class="title">Merry Xmas <br /> and Happy New Year</div></div>
-  <div class="card droppable" id="c2"><div class="title"><iframe width="320" src="https://www.youtube.com/embed/MDwPXRy9IFc?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
-
-<img id="stamp" src="rubberstamp.png" />
+  <div class="card" id="c1"><div class="title">新年快樂</div></div>
+  <div class="card" id="c2"><div class="title">好樂迪阿婆飯糰</div></div>
 </body>
 
-<script>
-
-$(document).ready(function(){
-
-
-  var currentMousePos = { x: -1, y: -1 };
-  $(document).mouseup(function(event) {
-      currentMousePos.x = event.pageX - 550;
-      currentMousePos.y = event.pageY - 150;
-  });
-
-  $("#stamp").draggable();
-  $("#c1").click(function(){
-        $("#c1").addClass("hovered");
-    });
-
-  var stamped = false;
-
-  $( ".droppable" ).droppable({
-      drop: function( event, ui ) {
-
-          console.log(currentMousePos);
-
-          var newstamp = $( "<img id='icon' src='trustedbrand.png' style='position: absolute; z-index: 3; top: "+ currentMousePos.y + "px; left: " + currentMousePos.x + "px; width: 100px'/>" )
-          $(this).append(newstamp);
-
-          if(stamped == false){
-              $("#stamp").wrap($('<a target="_blank" rel="noopener noreferrer" href= "http://web.mit.edu/lavin/www/origami/books/details/1568811942/" style="cursor: default">'));
-              stamped = true;
-          }
-
-        }
-    });
-});
-
-// Make the DIV element draggable:
-</script>
 </html>
-
-
-<!--Thanks to http://web.mit.edu/lavin/www/origami/books/details/1568811942/ -->
