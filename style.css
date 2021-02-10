@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');*/
 
-/*@import url(https://fonts.googleapis.com/earlyaccess/cwtexkai.css);*/
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexkai.css);
 
 .card {
     position: absolute;
@@ -13,7 +13,7 @@
 
     text-align: center;
     font-family: 'cwTeXKai';
-    font-family: 'Great Vibes';
+    /* font-family: 'Great Vibes'; */
     font-size: 60px;
     background: #cc0000;
 
